@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Welcome to CMS site</h1>
+            <div id="content"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, necessitatibus ratione obcaecati aliquam perspiciatis nobis. Esse at ex, magnam nobis animi veritatis reiciendis ipsa saepe delectus suscipit, illo unde? Fuga!</p>
+        </div>
+    </div>
+
+    <footer>
+        This is footer. Copyright
+    </footer>
+
+    <script type="module">
+        import { TinaCMS } from '@tinacms/core';
+        import { TinaScripts } from '@tinacms/scripts';
+        // Initialize TinaCMS
+        const tinaCMS = TinaCMS.init({
+          enabled: true,
+          sidebar: true,
+          toolbar: true,
+        });
+    
+        // Fetch and display content
+        fetch('/content/pages/home.md')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('content').innerText = data;
+          });
+      </script>
+</body>
+</html>
+

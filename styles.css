@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+
+}
+
+
+.container{
+    width: 100%;
+    background-color: #a8a8e9;
+}
+
+.wrapper{
+    background-color: pink;
+    margin: 0 auto;
+    max-width: 1200px;
+    border-top: 1px solid white;
+}
